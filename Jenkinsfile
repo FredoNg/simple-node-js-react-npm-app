@@ -1,7 +1,7 @@
 pipeline {
     agent {
+		sudo chmod 666 /var/run/docker.sock 
         docker {
-			sudo chmod 666 /var/run/docker.sock 
             image 'node:lts-buster-slim' 
             args '-p 3000:3000' 
         }
